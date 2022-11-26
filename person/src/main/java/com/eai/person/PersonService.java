@@ -32,7 +32,15 @@ public class PersonService {
 
         connector.createIfNotExists(person.getGroupId());
 
+        if(person.getRole() == null) {
+            person.setRole(Roles.STUDENT);
+        }
+
         return personRepository.save(person);
+    }
+
+    public List<Person> fetchPersonsByGroupId(Long id) {
+        return personRepository.findByGroupId(id);
     }
 
 }

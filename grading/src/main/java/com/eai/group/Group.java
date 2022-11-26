@@ -24,7 +24,6 @@ import java.util.List;
 @Table(name = "student_group")
 public class Group {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
 

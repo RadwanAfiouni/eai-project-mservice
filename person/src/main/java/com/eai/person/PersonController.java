@@ -39,4 +39,9 @@ public class PersonController {
         return new ResponseEntity<>(personService.savePerson(person), HttpStatus.OK);
     }
 
+    @GetMapping(path = "/byGroup/{id}")
+    public ResponseEntity<List<Person>> getPersonsByGroupId(@PathVariable("id") Long id) {
+        return new ResponseEntity<>(personService.fetchPersonsByGroupId(id), HttpStatus.OK);
+    }
+
 }

@@ -24,8 +24,8 @@ public class GroupController {
     }
 
     @GetMapping(path = "/{id}")
-    public ResponseEntity<Optional<Group>> getGroupById(@PathVariable("id") Long id) {
-        return new ResponseEntity<>(groupService.fetchGroupById(id), HttpStatus.OK);
+    public ResponseEntity<PopulatedGroup> getGroupById(@PathVariable("id") Long id) {
+        return new ResponseEntity<>(groupService.getPopulatedGroup(id), HttpStatus.OK);
     }
 
     @PostMapping(path = "/add")

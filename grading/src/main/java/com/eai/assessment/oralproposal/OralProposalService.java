@@ -1,7 +1,7 @@
 package com.eai.assessment.oralproposal;
 
 
-import com.eai.connectors.PersonConnector;
+import com.eai.connectors.Connector;
 import com.eai.group.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,11 +13,11 @@ import java.util.Optional;
 @Service
 public class OralProposalService {
     private final OralProposalRepository oralProposalRepository;
-    private final PersonConnector connector;
+    private final Connector connector;
     private final GroupService groupService;
 
     @Autowired
-    public OralProposalService(OralProposalRepository oralProposalRepository, PersonConnector connector, GroupService groupService) {
+    public OralProposalService(OralProposalRepository oralProposalRepository, Connector connector, GroupService groupService) {
         this.oralProposalRepository = oralProposalRepository;
         this.connector = connector;
         this.groupService = groupService;
