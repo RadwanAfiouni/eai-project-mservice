@@ -1,6 +1,7 @@
 package com.eai.person;
 
 
+import com.eai.Connector;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,11 +12,12 @@ import java.util.Optional;
 public class PersonService {
 
     private final PersonRepository personRepository;
-
+    private final Connector connector;
 
     @Autowired
-    public PersonService(PersonRepository personRepository) {
+    public PersonService(PersonRepository personRepository, Connector connector) {
         this.personRepository = personRepository;
+        this.connector = connector;
     }
 
     public List<Person> fetchAllPersons() {
@@ -28,6 +30,7 @@ public class PersonService {
 
     public Person savePerson(Person person) {
 
+        connector.createIfNotExists(person.getGroupId());
 
         return personRepository.save(person);
     }

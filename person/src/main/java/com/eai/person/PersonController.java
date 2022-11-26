@@ -31,7 +31,7 @@ public class PersonController {
     @PostMapping(path = "/add")
     public ResponseEntity<Person> postPerson(@RequestBody PersonModel personModel) {
         Person person = Person.builder()
-//                .group(PersonModel.getGroupId() != null ? Group.builder().id(PersonModel.getGroupId()).build() : null)
+                .groupId(personModel.getGroupId())
                 .firstName(personModel.getFirstName())
                 .lastName(personModel.getLastName())
                 .email(personModel.getEmail())

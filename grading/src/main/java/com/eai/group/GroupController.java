@@ -33,4 +33,9 @@ public class GroupController {
         return new ResponseEntity<>(groupService.saveGroup(Group.builder().id(groupModel.getId()).build()), HttpStatus.OK);
     }
 
+    @GetMapping(path = "/exists/{id}")
+    public ResponseEntity<Boolean> createIfNotExists(@PathVariable("id") Long id) {
+        return new ResponseEntity<>(groupService.createIfNotExists(id), HttpStatus.OK);
+    }
+
 }

@@ -28,7 +28,12 @@ public class GroupService {
         return groupRepository.findById(id);
     }
 
-    public boolean groupExists(Long id) {
-        return groupRepository.existsById(id);
+    public boolean createIfNotExists(Long id) {
+        if (groupRepository.existsById(id)) {
+            return true;
+        } else {
+            saveGroup(Group.builder().id(id).build());
+            return false;
+        }
     }
 }
