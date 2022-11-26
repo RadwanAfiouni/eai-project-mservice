@@ -26,5 +26,4 @@ public class PopulatedGroup {
     private Progress progress;
 
 
-
 }

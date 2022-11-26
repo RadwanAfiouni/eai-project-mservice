@@ -12,7 +12,6 @@ import javax.persistence.*;
 import java.util.Date;
 
 
-
 @Data
 @Entity
 @Builder
@@ -43,7 +42,6 @@ public class Progress {
     private Level criteria6;
     private Level criteria7;
     private Level criteria8;
-
 
 
 }

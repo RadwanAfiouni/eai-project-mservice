@@ -7,14 +7,12 @@ import com.eai.assessment.finalreport.FinalReport;
 import com.eai.assessment.oralproposal.OralProposal;
 import com.eai.assessment.progress.Progress;
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Data
 @Entity

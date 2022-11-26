@@ -32,7 +32,7 @@ public class PersonService {
 
         connector.createIfNotExists(person.getGroupId());
 
-        if(person.getRole() == null) {
+        if (person.getRole() == null) {
             person.setRole(Roles.STUDENT);
         }
 

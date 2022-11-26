@@ -41,5 +41,4 @@ public class OralProposal {
     private Level criteria8;
 
 
-
 }
