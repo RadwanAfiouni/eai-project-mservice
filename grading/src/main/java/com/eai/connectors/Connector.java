@@ -14,11 +14,11 @@ public class Connector {
     }
 
     public List<PersonModel> getPersonsByGroupId(Long groupId) {
-        return restTemplate.getForObject("http://localhost:8080/api/v1/person/byGroup/" + groupId, List.class);
+        return restTemplate.getForObject("http://PERSON/api/v1/person/byGroup/" + groupId, List.class);
     }
 
     public PersonModel getPersonById(Long id) {
-        return restTemplate.getForObject("http://localhost:8080/api/v1/person/" + id, PersonModel.class);
+        return restTemplate.getForObject("http://PERSON/api/v1/person/" + id, PersonModel.class);
     }
 
 }

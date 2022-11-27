@@ -13,7 +13,7 @@ public class Connector {
     }
 
     public Boolean createIfNotExists(Long groupId) {
-        return restTemplate.getForObject("http://localhost:8085/api/v1/group/exists/" + groupId, Boolean.class);
+        return restTemplate.getForObject("http://GRADING/api/v1/group/exists/" + groupId, Boolean.class);
     }
 
 }

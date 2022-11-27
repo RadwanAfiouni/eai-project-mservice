@@ -11,6 +11,7 @@
     <modules>
         <module>person</module>
         <module>grading</module>
+        <module>eureka-server</module>
     </modules>
 
     <name>fypmicroservices</name>
@@ -20,6 +21,7 @@
         <maven.compiler.target>17</maven.compiler.target>
         <spring.boot.maven.plugin.version>2.7.5</spring.boot.maven.plugin.version>
         <spring.boot.dependencies.version>2.7.5</spring.boot.dependencies.version>
+        <spring.cloud-version>2021.0.5</spring.cloud-version>
     </properties>
 
     <dependencyManagement>
@@ -28,6 +30,13 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
                 <version>${spring.boot.dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud-version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -48,15 +57,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
     </dependencies>
 
