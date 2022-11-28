@@ -12,6 +12,9 @@
         <module>person</module>
         <module>grading</module>
         <module>eureka-server</module>
+        <module>SpringCloudConfigServer</module>
+
+
     </modules>
 
     <name>fypmicroservices</name>
@@ -40,9 +43,9 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>

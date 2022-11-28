@@ -8,9 +8,16 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="grading" />
+        <module name="SpringCloudConfigServer" />
         <module name="eureka-server" />
         <module name="person" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Spring-config-server" target="17" />
+      <module name="Zipkin-server" target="17" />
+      <module name="zipkin-server" target="17" />
+      <module name="Zipkin-Server" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
