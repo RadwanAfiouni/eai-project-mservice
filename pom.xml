@@ -12,6 +12,7 @@
         <module>person</module>
         <module>grading</module>
         <module>eureka-server</module>
+        <module>rabbitmq</module>
     </modules>
 
     <name>fypmicroservices</name>

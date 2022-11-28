@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="grading" />
         <module name="eureka-server" />
+        <module name="rabbitmq" />
         <module name="person" />
       </profile>
     </annotationProcessing>
