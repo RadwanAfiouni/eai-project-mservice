@@ -12,6 +12,7 @@
         <module>person</module>
         <module>grading</module>
         <module>eureka-server</module>
+        <module>rabbitmq</module>
         <module>SpringCloudConfigServer</module>
 
 
@@ -43,9 +44,9 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
         </dependencies>
     </dependencyManagement>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
