@@ -47,11 +47,6 @@ public class GroupService {
                 .id(groupId)
                 .name(group.getName())
                 .persons(connector.getPersonsByGroupId(groupId))
-                .advisorAssessment(group.getAdvisorAssessment())
-                .finalPresentation(group.getFinalPresentation())
-                .finalReport(group.getFinalReport())
-                .oralProposal(group.getOralProposal())
-                .progress(group.getProgress())
                 .build();
 
     }

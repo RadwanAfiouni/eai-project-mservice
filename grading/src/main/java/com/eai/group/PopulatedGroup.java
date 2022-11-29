@@ -16,14 +16,5 @@ import java.util.List;
 public class PopulatedGroup {
     private Long id;
     private String name;
-
     private List<PersonModel> persons;
-
-    private AdvisorAssessment advisorAssessment;
-    private FinalPresentation finalPresentation;
-    private FinalReport finalReport;
-    private OralProposal oralProposal;
-    private Progress progress;
-
-
 }

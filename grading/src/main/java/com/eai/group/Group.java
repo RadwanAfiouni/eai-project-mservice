@@ -25,30 +25,5 @@ public class Group {
     private Long id;
     private String name;
 
-    @JsonBackReference(value = "advisor-assessment-group")
-    @OneToOne(mappedBy = "group", cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
-    private AdvisorAssessment advisorAssessment;
-
-    @JsonBackReference(value = "final-report-group")
-    @OneToOne(mappedBy = "group", cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
-    private FinalPresentation finalPresentation;
-
-    @JsonBackReference(value = "final-report-group")
-    @OneToOne(mappedBy = "group", cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
-    private FinalReport finalReport;
-
-    @JsonBackReference(value = "oral-proposal-group")
-    @OneToOne(mappedBy = "group", cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
-    private OralProposal oralProposal;
-
-    @JsonBackReference(value = "progress-group")
-    @OneToOne(mappedBy = "group", cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
-    private Progress progress;
-
 }
 
