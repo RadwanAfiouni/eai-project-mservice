@@ -12,7 +12,7 @@ import java.util.List;
 @Document
 public class MongoAssessment {
     @Id
-    private Long id;
+    private String id;
     private Long evaluatorId;
     private Long groupId;
     private List<Level> evaluatedTopics;
