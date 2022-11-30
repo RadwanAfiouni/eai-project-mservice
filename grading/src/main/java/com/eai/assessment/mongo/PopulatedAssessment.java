@@ -15,4 +15,5 @@ public class PopulatedAssessment {
     private PopulatedGroup group;
     private Assessment assessment;
     private Map<Long, List<Level>> evaluatedTopics;
+    private Double finalGrade;
 }

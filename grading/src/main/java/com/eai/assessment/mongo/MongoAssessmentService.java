@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicReference;
 
 @Service
 @AllArgsConstructor
@@ -38,16 +39,21 @@ public class MongoAssessmentService {
         List<MongoAssessment> mongoAssessments = mongoAssessmentRepository.findByGroupIdAndAssessment(groupId, assessment);
 
         Map<Long, List<Level>> evaluatedTopics = new HashMap<>();
-
+        AtomicReference<Long> sumGrade = new AtomicReference<>(0L);
+        AtomicReference<Long> maxGrade = new AtomicReference<>(0L);
         mongoAssessments.forEach(mongoAssessment -> {
             evaluatedTopics.put(mongoAssessment.getEvaluatorId(), mongoAssessment.getEvaluatedTopics());
+            maxGrade.updateAndGet(v -> v + 4L * mongoAssessment.getEvaluatedTopics().size());
+            sumGrade.updateAndGet(v -> v + mongoAssessment.getEvaluatedTopics().stream().mapToLong(Level::getValue).sum());
         });
+
+        Double averageGrade = 20.0 * ((double) sumGrade.get() / maxGrade.get());
 
         return PopulatedAssessment.builder()
                 .group(groupService.getPopulatedGroup(groupId))
                 .evaluatedTopics(evaluatedTopics)
                 .assessment(assessment)
+                .finalGrade(averageGrade)
                 .build();
-
     }
 }
