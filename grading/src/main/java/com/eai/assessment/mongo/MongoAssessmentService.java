@@ -6,6 +6,7 @@ import com.eai.group.GroupService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,6 +20,7 @@ public class MongoAssessmentService {
     private final GroupService groupService;
 
     public void save(MongoAssessment mongoAssessment) {
+        mongoAssessment.setDate(new Date());
         mongoAssessmentRepository.save(mongoAssessment);
     }
 
